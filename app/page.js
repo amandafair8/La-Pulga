@@ -31,15 +31,20 @@ export default function Home(){
    supabase.from('events').select('id,name,event_date,status,fulfillment,must_ship_by').not('status','eq','closed').order('event_date'),
    supabase.from('inventory_available').select('product_id,available_qty,minimum_stock,reusable')
   ])
-  setEmployee(emp);setEvents(ev||[]);setLow((inv||[]).filter(x=>x.available_qty<=x.minimum_stock).length);setLoading(false)
+  setEmployee(emp);setEvents(ev||[]);setLow((inv||[]).filter(x=>x.minimum_stock>0 && x.available_qty<=x.minimum_stock).length);setLoading(false)
  }
  useEffect(()=>{supabase.auth.getSession().then(({data})=>{setSession(data.session);load(data.session)});const {data:{subscription}}=supabase.auth.onAuthStateChange((_e,s)=>{setSession(s);load(s)});return()=>subscription.unsubscribe()},[])
  if(loading)return <main className="center">Loading LA PULGA…</main>
  if(!session)return <Login onLogin={s=>{setSession(s);load(s)}}/>
  const admin=employee?.app_access==='administrator'
- return <main><header><div><b>LA PULGA</b><small>{employee?.name||session.user.email}</small></div><button className="icon" onClick={async()=>{await supabase.auth.signOut();setSession(null)}}>Log Out</button></header><div className="content">
+ return <main><header><div><b>LA PULGA</b></div><button className="profileButton" aria-label="Profile" onClick={()=>setView('profile')}>👤</button></header><div className="content">
  {view==='home'&&<><h1>Home</h1>{admin&&<div className="stats"><button onClick={()=>setView('events')}><strong>{events.length}</strong><span>Upcoming Events</span></button><button><strong>0</strong><span>Needs Attention</span></button><button><strong>{low}</strong><span>Low Stock</span></button></div>}<div className="menu"><button onClick={()=>setView('events')}>Events <span>›</span></button><button onClick={()=>setView('checkout')}>General Checkout <span>›</span></button><button onClick={()=>setView('returns')}>Returns <span>›</span></button><button onClick={()=>setView('inventory')}>Inventory <span>›</span></button></div></>}
- {view!=='home'&&<Section view={view} events={events} admin={admin} back={()=>setView('home')}/>}</div></main>
+ {view==='profile'&&<Profile employee={employee} admin={admin} back={()=>setView('home')} onLogout={async()=>{await supabase.auth.signOut();setSession(null)}}/>}
+ {!['home','profile'].includes(view)&&<Section view={view} events={events} admin={admin} back={()=>setView('home')}/>}</div></main>
+}
+
+function Profile({employee,admin,back,onLogout}){
+ return <><button className="back" onClick={back}>‹ Back</button><h1>Profile</h1><div className="profileCard"><div><span>Name</span><b>{employee?.name||'—'}</b></div><div><span>Job Title</span><b>{employee?.job_title||'—'}</b></div></div>{admin&&<button className="menuButton" disabled>Manage Employees <span>›</span></button>}<button className="logoutButton" onClick={onLogout}>Log Out</button></>
 }
 
 function Section({view,events,admin,back}){
