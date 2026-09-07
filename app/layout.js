@@ -1,4 +1,5 @@
 import './globals.css'
+import NavEnhancer from './NavEnhancer'
 
 export const metadata = {
   title: 'LA PULGA',
@@ -8,5 +9,5 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  return <html lang="en"><body>{children}</body></html>
+  return <html lang="en"><body><NavEnhancer/>{children}</body></html>
 }
