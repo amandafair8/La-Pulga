@@ -1,4 +1,5 @@
 import './globals.css'
+import './packing.css'
 import NavEnhancer from './NavEnhancer'
 
 export const metadata = {
