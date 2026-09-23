@@ -14,3 +14,5 @@
 .updateHighlight{background:#fff8df!important;box-shadow:inset 3px 0 0 #d4ad35}.eventChangeSummary{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px}.eventChangeSummary span{padding:3px 7px;border-radius:999px;background:#fff;color:#675000;font-size:11px;font-weight:700}.markReviewedButton{align-self:flex-start;margin-top:7px;padding:8px 12px;border:1px solid #8c741e;border-radius:9px;background:#fff;color:#5e4a00;font-weight:800;cursor:pointer}.markReviewedButton:disabled{opacity:.55}
 
 .eventReadyTag{display:inline-flex;align-items:center;margin-left:8px;padding:3px 8px;border-radius:999px;background:#e8f5ec;color:#247a3d;font-size:12px;font-style:normal;font-weight:800;line-height:1.2;white-space:nowrap;border:1px solid #a9d8b5}
+
+.eventDate{display:flex;flex-direction:column;align-items:flex-start;gap:5px}.eventShipTag{display:block;font-size:11px;font-weight:850;letter-spacing:.04em;color:#20201f;white-space:nowrap}.eventCardMain>small{margin-top:4px}
