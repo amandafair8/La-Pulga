@@ -38,7 +38,6 @@ export default function ProfilePage(){
   async function logout(){await supabase.auth.signOut();router.replace('/')}
   if(loading)return <main className="center">Loading Profile…</main>
   const admin=employee?.app_access==='administrator'
-  if(manage&&admin)return <ManageProducts back={()=>setManage(false)}/>
   return <main>
     <header><div><b style={{cursor:'pointer'}} onClick={()=>router.push('/')}>LA PULGA</b></div><button className="profileButton" aria-label="Profile">👤</button></header>
     <div className="content">
@@ -52,7 +51,7 @@ export default function ProfilePage(){
       {admin&&<><button className="menuButton" onClick={()=>router.push('/profile/products')}>Manage Products <span>›</span></button><button className="menuButton" disabled>Manage Employees <span>›</span></button></>}
       <button className="logoutButton" onClick={logout}>Log Out</button>
     </div>
-    <style>{`.productEditBackdrop{position:fixed;inset:0;z-index:9999;background:#0006;display:flex;align-items:stretch;justify-content:center;padding:12px}.productEditModal{width:min(100%,520px);height:auto;max-height:calc(100dvh - 24px);margin:0;background:#fff;border-radius:18px;padding:22px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y}.productEditModal .productEditForm{padding-bottom:32px}.productEditModal .productEditForm>.primary{margin-top:6px}.profileTitleRow{display:flex;align-items:center;justify-content:space-between}.profileEditButton{border:1px solid #ccc;background:#fff;border-radius:10px;padding:8px 14px;font-weight:700}.profileEditCard{background:#fff;border:1px solid #ddd;border-radius:14px;padding:16px;margin-bottom:14px}.profileEditCard label{display:block;color:#666;font-size:12px;margin-bottom:14px}.profileEditCard input{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid #ccc;border-radius:10px;background:#fff;color:#20201f;font-size:16px}.profileEditActions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}`}</style>
+    <style>{`.profileTitleRow{display:flex;align-items:center;justify-content:space-between}.profileEditButton{border:1px solid #ccc;background:#fff;border-radius:10px;padding:8px 14px;font-weight:700}.profileEditCard{background:#fff;border:1px solid #ddd;border-radius:14px;padding:16px;margin-bottom:14px}.profileEditCard label{display:block;color:#666;font-size:12px;margin-bottom:14px}.profileEditCard input{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid #ccc;border-radius:10px;background:#fff;color:#20201f;font-size:16px}.profileEditActions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}`}</style>
   </main>
 }
 
