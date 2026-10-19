@@ -5,7 +5,7 @@ import { createClient } from '../lib/supabase'
 
 const supabase=createClient()
 const fmtDate=v=>{if(!v)return '—';const d=new Date(v+'T12:00:00');return d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})}
-const fmtStatus=v=>(v||'').replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperCase())
+const fmtStatus=v=>v==='packed'?'Ready for Pickup':(v||'').replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperCase())
 
 export default function EventsCenter({back}){
   const params=typeof window==='undefined'?new URLSearchParams():new URLSearchParams(window.location.search),assignedOnly=params.get('assigned')==='1',readyOnly=params.get('ready')==='1'
