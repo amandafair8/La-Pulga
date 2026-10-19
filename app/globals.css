@@ -27,9 +27,4 @@
 .productAdminSearch{margin-bottom:14px}.productAdminList{background:#fff;border:1px solid #ddd;border-radius:13px;overflow:hidden}.productAdminRow{width:100%;border:0;border-bottom:1px solid #eee;background:#fff;padding:15px 16px;display:flex;align-items:center;justify-content:space-between;gap:15px;text-align:left}.productAdminRow:last-child{border-bottom:0}.productAdminRow b,.productAdminRow small{display:block}.productAdminRow small{color:#777;margin-top:4px}.productAdminMeta{color:#666;font-size:13px;white-space:nowrap}.productEditForm{display:grid;gap:14px}.productEditForm label{display:grid;gap:6px;font-weight:700}.productEditForm input:not([type=checkbox]),.productEditForm select,.productEditForm textarea{width:100%;padding:11px 12px;border:1px solid #ccc;border-radius:9px;background:#fff;font:inherit}.productEditForm textarea{min-height:90px;resize:vertical}.productEditForm .checkLabel{display:flex;align-items:center;gap:9px}.productEditForm .checkLabel input{width:18px;height:18px}
 
 
-.assignedEvents{margin:0 0 22px}
-.assignedEvents h2{font-size:18px;margin:0 0 10px}
-.assignedEvents button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border:1px solid #d8d8d5;border-radius:13px;background:#fff;text-align:left;margin-bottom:9px}
-.assignedEvents span b,.assignedEvents span small{display:block}
-.assignedEvents span small{color:#777;margin-top:4px}
-.assignedEvents button>strong{flex:0 0 auto;padding:6px 9px;border-radius:999px;background:#eee;color:#333;font-size:12px}
+.employeeStats{grid-template-columns:repeat(2,1fr)}
