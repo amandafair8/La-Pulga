@@ -14,10 +14,10 @@ export default function EventsCenter({back}){
   useEffect(()=>{load()},[])
   function showNotice(message){setNotice(message);window.setTimeout(()=>setNotice(''),2500)}
   const filtered=useMemo(()=>{const q=search.trim().toLowerCase();return events.filter(e=>!q||[e.name,e.event_date,e.location_text,e.status,e.fulfillment].filter(Boolean).some(v=>String(v).toLowerCase().includes(q)))},[events,search])
-  const today=new Date().toISOString().slice(0,10),pastStatuses=new Set(['returned','closed','cancelled']),outStatuses=new Set(['checked_out','shipped'])
+  const now=new Date(),today=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`,pastStatuses=new Set(['returned','closed','cancelled']),outStatuses=new Set(['checked_out','shipped'])
   const out=filtered.filter(e=>outStatuses.has(e.status)).sort((a,b)=>b.event_date.localeCompare(a.event_date))
   const drafts=admin?filtered.filter(e=>e.status==='draft').sort((a,b)=>b.created_at.localeCompare(a.created_at)):[]
-  const upcoming=filtered.filter(e=>e.status!=='draft'&&!pastStatuses.has(e.status)&&!outStatuses.has(e.status)&&(e.event_date>=today||['confirmed','ready_to_pack','packing','packed'].includes(e.status))).sort((a,b)=>(a.fulfillment==='ship'&&a.must_ship_by?a.must_ship_by:a.event_date).localeCompare(b.fulfillment==='ship'&&b.must_ship_by?b.must_ship_by:b.event_date))
+  const upcoming=filtered.filter(e=>e.status!=='draft'&&!pastStatuses.has(e.status)&&!outStatuses.has(e.status)&&e.event_date>=today).sort((a,b)=>(a.fulfillment==='ship'&&a.must_ship_by?a.must_ship_by:a.event_date).localeCompare(b.fulfillment==='ship'&&b.must_ship_by?b.must_ship_by:b.event_date))
   const past=filtered.filter(e=>e.status!=='draft'&&(pastStatuses.has(e.status)||(!upcoming.some(u=>u.id===e.id)&&!out.some(o=>o.id===e.id)))).sort((a,b)=>b.event_date.localeCompare(a.event_date))
   if(mode==='create')return <CreateEvent initial={repeatSource} cancel={()=>{setRepeatSource(null);setMode('list')}} created={async()=>{setRepeatSource(null);await load();setMode('list')}}/>
   if(mode==='repeat')return <RepeatEvent events={events} cancel={()=>setMode('list')} choose={x=>{setRepeatSource(x);setMode('create')}}/>
