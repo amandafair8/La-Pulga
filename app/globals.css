@@ -46,3 +46,21 @@
 .inventoryAdminBar .inventoryAdminHint{margin:0}
 .addProductButton{width:auto;min-width:150px}
 @media(max-width:600px){.inventoryAdminBar{align-items:stretch;flex-direction:column}.addProductButton{width:100%}}
+
+
+/* Spreadsheet-style Inventory view; General Checkout keeps the standard table. */
+.inventorySheetWrap{border-color:#b7b7b7;border-radius:6px;box-shadow:0 1px 3px #00000012}
+.inventorySheet{min-width:760px;font-size:13px}
+.inventorySheet .inventoryTr{grid-template-columns:42px minmax(220px,2fr) minmax(220px,1.6fr) minmax(110px,.8fr) minmax(90px,.7fr) 80px;min-height:39px}
+.inventorySheet .inventoryTr:nth-child(even)>span,.inventorySheet .inventoryTr:nth-child(even)>b{background:#fafafa}
+.inventorySheet .inventoryHead{min-height:38px;background:#e7e7e7;border-bottom:2px solid #aaa}
+.inventorySheet .inventoryHead>span{background:#e7e7e7!important;color:#20201f}
+.inventorySheet .inventoryTr>span,.inventorySheet .inventoryTr>b{padding:9px 10px;border-right:1px solid #d8d8d8}
+.inventorySheet .inventoryTr{border-bottom:1px solid #d8d8d8}
+.inventorySheet .sheetRowNumber{position:sticky;left:0;z-index:3;justify-content:center;text-align:center;color:#777;background:#f1f1f1!important;font-size:11px;font-weight:650;border-right:1px solid #bcbcbc!important}
+.inventorySheet .productCell{left:42px}
+.inventorySheet .inventoryHead .sheetRowNumber{z-index:5;background:#ddd!important}
+.inventorySheet .inventoryHead .productCell{z-index:4}
+.inventorySheet .adminInventoryTr:hover>span,.inventorySheet .adminInventoryTr:hover>b{background:#eef4ff!important}
+.inventorySheet .adminInventoryTr:hover .sheetRowNumber{background:#e0e8f5!important}
+@media(max-width:430px){.inventorySheet{min-width:720px}.inventorySheet .inventoryTr{grid-template-columns:38px 190px 200px 95px 75px 65px}.inventorySheet .productCell{left:38px}}
