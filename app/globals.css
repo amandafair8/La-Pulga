@@ -28,3 +28,5 @@
 
 
 .employeeStats{grid-template-columns:repeat(2,1fr)}
+
+.fieldError{color:#a61b1b}.fieldError input,.fieldError textarea{border-color:#c62828!important;box-shadow:0 0 0 2px rgba(198,40,40,.12)}.fieldErrorMessage{display:block;margin-top:5px;color:#a61b1b;font-size:12px;font-weight:650}
