@@ -34,3 +34,10 @@
 .shippingFields textarea{font-size:16px;line-height:1.45;min-height:100px;resize:vertical}
 
 .inventoryAdminAction{display:flex;justify-content:flex-end;margin:-8px 0 14px}.inventoryAdminAction .secondaryAction{width:auto;min-width:190px}@media(max-width:600px){.inventoryAdminAction .secondaryAction{width:100%}}
+
+.inventoryAdminHint{margin:-8px 0 14px;color:#666;font-size:14px}
+.adminInventoryTr{cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.adminInventoryTr:hover{background:#f0efeb}
+.inventoryRowStockEdit{border:1px solid #ddd;border-radius:12px;padding:14px;background:#f8f7f4}
+.inventoryRowStockEdit h2{font-size:17px;margin:0 0 4px}
+.inventoryRowStockEdit p{font-size:13px;color:#666;margin:0 0 12px}
