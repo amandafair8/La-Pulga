@@ -60,3 +60,16 @@
 .inventorySheet .inventoryHead .productCell{z-index:4}
 .inventorySheet .adminInventoryTr:hover>span,.inventorySheet .adminInventoryTr:hover>b{background:#eef4ff!important}
 @media(max-width:430px){.inventorySheet{min-width:680px}.inventorySheet .inventoryTr{grid-template-columns:190px 200px 95px 75px 65px}}
+
+
+.sheetZoom{display:grid;grid-template-columns:38px 58px 38px;align-items:stretch;border:1px solid #ccc;border-radius:12px;background:#fff;overflow:hidden}
+.sheetZoom button{border:0;background:#fff;font-size:19px;font-weight:650}
+.sheetZoom button:disabled{color:#bbb;cursor:default}
+.sheetZoom span{display:grid;place-items:center;border-left:1px solid #ddd;border-right:1px solid #ddd;font-size:12px;font-weight:700}
+.inventorySheet.inventoryZoom80{min-width:600px;font-size:11px}
+.inventorySheet.inventoryZoom80 .inventoryTr{grid-template-columns:minmax(175px,2fr) minmax(175px,1.6fr) minmax(90px,.8fr) minmax(72px,.7fr) 64px;min-height:32px}
+.inventorySheet.inventoryZoom80 .inventoryTr>span,.inventorySheet.inventoryZoom80 .inventoryTr>b{padding:6px 7px}
+.inventorySheet.inventoryZoom120{min-width:880px;font-size:15px}
+.inventorySheet.inventoryZoom120 .inventoryTr{grid-template-columns:minmax(250px,2fr) minmax(250px,1.6fr) minmax(130px,.8fr) minmax(110px,.7fr) 90px;min-height:48px}
+.inventorySheet.inventoryZoom120 .inventoryTr>span,.inventorySheet.inventoryZoom120 .inventoryTr>b{padding:12px}
+@media(max-width:600px){.sheetZoom{grid-template-columns:38px 52px 38px}.inventoryTools .sheetZoom{margin-bottom:8px}.inventoryTools{display:grid;grid-template-columns:1fr auto;column-gap:8px}.inventoryTools .inventorySearch{grid-column:1/-1}.inventoryTools .inventorySort{width:auto}.inventorySheet.inventoryZoom80{min-width:576px}.inventorySheet.inventoryZoom120{min-width:830px}}
