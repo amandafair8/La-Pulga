@@ -32,3 +32,5 @@
 .fieldError{color:#a61b1b}.fieldError input,.fieldError textarea{border-color:#c62828!important;box-shadow:0 0 0 2px rgba(198,40,40,.12)}.fieldErrorMessage{display:block;margin-top:5px;color:#a61b1b;font-size:12px;font-weight:650}
 
 .shippingFields textarea{font-size:16px;line-height:1.45;min-height:100px;resize:vertical}
+
+.inventoryAdminAction{display:flex;justify-content:flex-end;margin:-8px 0 14px}.inventoryAdminAction .secondaryAction{width:auto;min-width:190px}@media(max-width:600px){.inventoryAdminAction .secondaryAction{width:100%}}
