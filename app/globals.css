@@ -60,3 +60,14 @@
 .inventorySheet .inventoryHead .productCell{z-index:4}
 .inventorySheet .adminInventoryTr:hover>span,.inventorySheet .adminInventoryTr:hover>b{background:#eef4ff!important}
 @media(max-width:430px){.inventorySheet{min-width:680px}.inventorySheet .inventoryTr{grid-template-columns:190px 200px 95px 75px 65px}}
+
+
+.locationChoiceList{display:grid;gap:8px;margin:10px 0 16px}
+.locationChoiceButton{width:100%;border:1px solid #ccc;border-radius:10px;background:#fff;padding:11px 12px;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.locationChoiceButton b{font-size:14px}
+.locationChoiceButton small{color:#777;white-space:nowrap}
+.locationChoiceButton.selected{border-color:#20201f;background:#f0efeb;box-shadow:inset 0 0 0 1px #20201f}
+.returnLocationChoice{margin:0 16px 16px;padding:12px;border:1px solid #ddd;border-radius:10px;background:#f8f7f4}
+.returnLocationChoice>b,.returnLocationChoice>small{display:block}
+.returnLocationChoice>small{margin-top:4px;color:#666;font-size:12px}
+.returnLocationChoice .locationChoiceList{margin-bottom:0}
