@@ -71,3 +71,12 @@
 .returnLocationChoice>b,.returnLocationChoice>small{display:block}
 .returnLocationChoice>small{margin-top:4px;color:#666;font-size:12px}
 .returnLocationChoice .locationChoiceList{margin-bottom:0}
+
+.stockModeButtons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+.stockModeButtons button{border:1px solid #bbb;background:#fff;color:#20201f;border-radius:10px;padding:11px 10px;font-weight:700;cursor:pointer}
+.stockModeButtons button.selected{background:#20201f;color:#fff;border-color:#20201f}
+.stockPreview{display:flex;align-items:center;justify-content:center;gap:12px;background:#f2f1ed;border:1px solid #ddd;border-radius:10px;padding:12px;margin:10px 0 14px;color:#555}
+.stockPreview span{display:block}
+.stockPreview b{color:#20201f;font-size:18px;margin-left:4px}
+.stockPreview strong{color:#777;font-size:20px}
+@media(max-width:520px){.stockPreview{align-items:flex-start;flex-direction:column;gap:4px}.stockPreview strong{transform:rotate(90deg);align-self:center}.stockModeButtons{grid-template-columns:1fr}}
