@@ -80,3 +80,16 @@
 .stockPreview b{color:#20201f;font-size:18px;margin-left:4px}
 .stockPreview strong{color:#777;font-size:20px}
 @media(max-width:520px){.stockPreview{align-items:flex-start;flex-direction:column;gap:4px}.stockPreview strong{transform:rotate(90deg);align-self:center}.stockModeButtons{grid-template-columns:1fr}}
+
+.inventoryAdminActions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.templateManagerPanel{max-width:860px}
+.templateForm textarea{font-size:16px;line-height:1.45}
+.templateFormActions,.templateRowActions{display:flex;gap:10px;align-items:center}
+.templateSavedRow{align-items:flex-start}
+.templateSavedRow>span{min-width:0}
+.templateSavedRow small,.templatePicker small,.selectedBatchList small{display:block;white-space:pre-wrap;line-height:1.35}
+.templatePicker,.selectedBatchList{margin-top:14px;padding:14px;border:1px solid #ddd;border-radius:12px;background:#fafafa;display:grid;gap:8px}
+.templatePicker>button{width:100%;display:flex;justify-content:space-between;gap:16px;text-align:left;padding:12px;border:1px solid #ddd;border-radius:10px;background:white}
+.selectedBatchList>.builderRow{margin-top:8px}
+.batchInfoSection .eventNoteRow small{display:block;white-space:pre-wrap;font-size:15px;line-height:1.45;color:#444}
+@media(max-width:700px){.inventoryAdminActions{width:100%}.inventoryAdminActions button{flex:1}.templateFormActions{align-items:stretch;flex-direction:column}.templateRowActions{width:100%;justify-content:flex-end}.packingActions{flex-wrap:wrap}.packingActions button{white-space:normal}}
