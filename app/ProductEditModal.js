@@ -74,21 +74,22 @@ export default function ProductEditModal({row,onClose,onSaved}){
         {field('size','Size')}
         {field('keywords','Keywords')}
         {field('specific_location','Specific Location')}
-        {field('minimum_stock','Minimum Stock','number')}
+        <label>Low-Stock Alert Level<input type="number" value={edit.minimum_stock??''} onChange={e=>setEdit(v=>({...v,minimum_stock:e.target.value}))}/><small>This is only an alert threshold. It is never added to the inventory count.</small></label>
         <section className="inventoryRowStockEdit">
           <h2>Stock at {row.locations?.name||'this location'}</h2>
-          <p>{row.available_qty} currently available after reservations</p>
+          <p><b>{row.on_hand}</b> physical count · <b>{row.available_qty}</b> available after event reservations</p>
+          <p className="stockThresholdNote">Low-stock alert: {edit.minimum_stock||0} (alert only; not included below)</p>
           <div className="stockModeButtons">
             <button type="button" className={stockMode==='add'?'selected':''} onClick={()=>setStockMode('add')}>Add Stock</button>
             <button type="button" className={stockMode==='count'?'selected':''} onClick={()=>setStockMode('count')}>Set Physical Count</button>
           </div>
           {stockMode==='add'?<>
             <label>Amount Being Added<input type="number" min="1" inputMode="numeric" placeholder="Enter the amount received" value={addQty} onChange={e=>setAddQty(e.target.value)}/></label>
-            {addQty!==''&&Number(addQty)>0&&<div className="stockPreview"><span>Current on hand: <b>{row.on_hand}</b></span><strong>→</strong><span>New on hand: <b>{previewTotal}</b></span></div>}
+            {addQty!==''&&Number(addQty)>0&&<div className="stockPreview"><span>Current physical count: <b>{row.on_hand}</b></span><strong>→</strong><span>New physical count: <b>{previewTotal}</b></span></div>}
             {addQty!==''&&Number(addQty)>0&&<label>Restock Note<input value={note} onChange={e=>setNote(e.target.value)} placeholder="Optional note about this restock"/></label>}
           </>:<>
             <label>Physical Count<input type="number" min="0" inputMode="numeric" value={onHand} onChange={e=>setOnHand(e.target.value)}/></label>
-            {countChanged&&<div className="stockPreview"><span>Current on hand: <b>{row.on_hand}</b></span><strong>→</strong><span>New on hand: <b>{onHand}</b></span></div>}
+            {countChanged&&<div className="stockPreview"><span>Current physical count: <b>{row.on_hand}</b></span><strong>→</strong><span>New physical count: <b>{onHand}</b></span></div>}
             {countChanged&&<label>Adjustment Note<input value={note} onChange={e=>setNote(e.target.value)} placeholder="Reason for correcting the inventory count"/></label>}
           </>}
         </section>
