@@ -105,3 +105,21 @@
 .templateEmptyProducts{padding:18px 0 4px}
 .templateEditor>.templateFormActions{padding:2px 0 20px}
 @media(max-width:700px){.templateManagerPanel{padding-left:16px;padding-right:16px}.templateEditor .createEventCard{padding:18px}.templateProductsCard .builderRow{align-items:flex-start}}
+
+/* Match the Create Event card layout inside Kits & Batches. */
+.templateManagerPanel .createEventCard{background:#fff;border:1px solid #ddd;border-radius:14px;padding:18px}
+.templateManagerPanel .createEventCard h2{font-size:18px;margin:0 0 14px}
+.templateManagerPanel .createEventCard label{display:block;font-size:12px;color:#666;font-weight:650}
+.templateManagerPanel .createEventCard input,.templateManagerPanel .createEventCard select,.templateManagerPanel .createEventCard textarea{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid #ccc;border-radius:9px;background:#fff;color:#20201f}
+.templateManagerPanel .createEventCard textarea{min-height:78px;resize:vertical}
+.templateManagerPanel .productTypeahead{position:relative;width:100%}
+.templateManagerPanel .productSuggestions{position:absolute;left:0;right:0;top:100%;z-index:4;background:#fff;border:1px solid #ccc;border-radius:10px;overflow:hidden;box-shadow:0 8px 22px #0002}
+.templateManagerPanel .productSuggestions button{width:100%;border:0;border-bottom:1px solid #eee;background:#fff;padding:11px;text-align:left}
+.templateManagerPanel .productSuggestions small{display:block;color:#777;margin-top:3px}
+.templateManagerPanel .builderRows{display:grid;gap:8px;margin-top:12px}
+.templateManagerPanel .builderRow{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;border-top:1px solid #eee;padding:10px 0 0}
+.templateManagerPanel .builderRow small{display:block;color:#777;margin-top:3px}
+.templateManagerPanel .optionalText{font-size:12px;color:#888;font-weight:500}
+.templateManagerPanel .templateEditor{gap:14px}
+.templateManagerPanel .templateProductsCard .productTypeahead{margin-top:12px}
+@media(max-width:520px){.templateManagerPanel .builderRow{grid-template-columns:1fr auto}.templateManagerPanel .builderRow .removeItem{grid-column:1/-1;justify-self:start}}
