@@ -82,7 +82,7 @@
 @media(max-width:520px){.stockPreview{align-items:flex-start;flex-direction:column;gap:4px}.stockPreview strong{transform:rotate(90deg);align-self:center}.stockModeButtons{grid-template-columns:1fr}}
 
 .inventoryAdminActions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.templateManagerPanel{max-width:860px}
+.templateManagerPanel{max-width:980px;padding-bottom:42px}
 .templateForm textarea{font-size:16px;line-height:1.45}
 .templateFormActions,.templateRowActions{display:flex;gap:10px;align-items:center}
 .templateSavedRow{align-items:flex-start}
@@ -93,3 +93,15 @@
 .selectedBatchList>.builderRow{margin-top:8px}
 .batchInfoSection .eventNoteRow small{display:block;white-space:pre-wrap;font-size:15px;line-height:1.45;color:#444}
 @media(max-width:700px){.inventoryAdminActions{width:100%}.inventoryAdminActions button{flex:1}.templateFormActions{align-items:stretch;flex-direction:column}.templateRowActions{width:100%;justify-content:flex-end}.packingActions{flex-wrap:wrap}.packingActions button{white-space:normal}}
+
+.templateEditor{display:grid;gap:18px;margin-top:20px}
+.templateEditor .createEventCard{padding:24px}
+.templateNameCard label{display:grid;gap:8px}
+.templateNameCard input{width:100%;font-size:18px;padding:14px}
+.templateProductsCard .productTypeahead{margin-top:16px}
+.templateProductsCard .builderRows{margin-top:18px}
+.templateProductsCard .builderRow{padding:16px 4px}
+.templateNotesCard textarea{width:100%;font-size:16px;line-height:1.45;padding:14px}
+.templateEmptyProducts{padding:18px 0 4px}
+.templateEditor>.templateFormActions{padding:2px 0 20px}
+@media(max-width:700px){.templateManagerPanel{padding-left:16px;padding-right:16px}.templateEditor .createEventCard{padding:18px}.templateProductsCard .builderRow{align-items:flex-start}}
