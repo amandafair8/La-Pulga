@@ -127,3 +127,15 @@
 .returnTable .returnTr{min-width:540px}
 .returnTable .returnTr>span:first-child{position:sticky;left:0;z-index:2;background:#fff;box-shadow:1px 0 0 #e5e5e5}
 .returnTable .returnHead>span:first-child{z-index:3;background:#eee}
+
+.checkoutKitBar{display:flex;justify-content:flex-start;margin:0 0 12px}
+.checkoutKitBar .secondaryAction{width:auto;padding:11px 18px}
+.checkoutKitPicker,.checkoutKitSetup{width:min(620px,calc(100vw - 32px));max-height:85vh;overflow-y:auto}
+.checkoutKitChoices{display:grid;gap:8px;margin:16px 0}
+.checkoutKitChoices>button{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;background:#fff;text-align:left}
+.checkoutKitChoices small,.checkoutKitSetupRow small{display:block;color:#777;margin-top:3px}
+.checkoutKitSetupRows{display:grid;gap:10px;margin:16px 0 20px}
+.checkoutKitSetupRow{display:grid;grid-template-columns:minmax(160px,1fr) minmax(190px,1fr);gap:12px;align-items:center;padding:12px 0;border-top:1px solid #eee;text-align:left}
+.checkoutKitSetupRow select{width:100%;padding:10px;border:1px solid #ccc;border-radius:9px;background:#fff}
+.kitUnavailable{color:#a52626;font-size:13px}
+@media(max-width:600px){.checkoutKitSetupRow{grid-template-columns:1fr}.checkoutKitSetupRow select{font-size:16px}}
